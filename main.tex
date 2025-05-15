@@ -1,0 +1,91 @@
+%%%% compile with
+%%% latexmk -auxdir=aux/ main.tex
+\documentclass{irdbeamer}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{animate}
+
+\title{Decision trees and Random Forests}
+\subtitle{Formation IA biodiversité}
+\author[Paul Tresson]{Paul Tresson}
+\date{\today} % or whatever the date you are presenting in is
+\institute[Institut de Recherche pour le Développement]{UMR AMAP}
+
+%\copyrightnotice{Published by Institut de Recherche pour le Développement, with permission}
+
+% %% to add a background image for the title slide, uncomment here
+% \usebackgroundtemplate{
+%   \tikz[overlay, remember picture] \node[at=(current page.center)] {
+%     \includegraphics[width=\paperwidth,height=\paperheight]{example-image-a}
+%   };
+% }
+
+\usepackage[
+    backend=biber,
+    style=authoryear-comp,
+    maxcitenames=2, % max 2 authors before switching to et al.
+    maxbibnames=4,
+    uniquelist=false, % stays et al. when almost the same authors
+    uniquename=false, % dose not bother when first name not written the same way everywhere
+    date=year, % month does not appear in bibliography
+    natbib=true, % use natbib synthax
+    url=false, % remove url
+    eprint=false % remove eprint
+]{biblatex}
+
+\addbibresource{refs.bib}
+
+\let\oldcite=\cite                                                              
+\renewcommand{\cite}[1]{\textcolor[rgb]{.5,.5,.7}{\oldcite{#1}}}
+\let\oldcitep=\citep                                                              
+\renewcommand{\citep}[1]{\textcolor[rgb]{.5,.5,.7}{\oldcitep{#1}}}
+
+\begin{document}
+
+\addlogo{logos/IRD_banner.png}
+\addlogo{logos/AMAP_banner.png}
+\maketitle
+
+\usebackgroundtemplate{}
+
+\section{Introduction}
+
+\begin{frame}{}
+\end{frame}
+
+
+\section{Decision Trees}
+
+\begin{frame}{}
+\end{frame}
+
+\section{Random Forests}
+
+\begin{frame}{}
+\end{frame}
+
+
+\begin{frame}{Usefull ressources}
+
+\begin{itemize}
+    \item \texttt{scikit-learn} docs !
+    \item \href{https://www.youtube.com/@statquest}{StatQuest}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+    \Huge{\textbf{Thanks for you attention !}}
+    
+    \vfill
+    
+    \LARGE{\textbf{Let's practice !}}
+\end{frame}
+
+\appendix
+\begin{frame}[allowframebreaks]{References}
+\setbeamertemplate{bibliography item}{}
+    {\footnotesize \printbibliography[heading=none]}
+\end{frame}
+
+
+\end{document}
