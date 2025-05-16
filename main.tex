@@ -51,11 +51,138 @@
 
 \section{Introduction}
 
-\begin{frame}{}
+\begin{frame}{Motivation}
+\begin{columns}
+    \begin{column}[t]{0.5\textwidth}
+\centering
+    \includegraphics<1>[width=\textwidth]{./figs/schemas/motivation1.png}%
+    \includegraphics<2->[width=\textwidth]{./figs/schemas/motivation2.png}%
+\end{column}
+    \begin{column}[t]{0.5\textwidth}
+\centering
+    \includegraphics<3>[width=\textwidth]{./figs/schemas/motivation-tree.png}%
+\end{column}
+\end{columns}
 \end{frame}
 
 
 \section{Decision Trees}
+
+\begin{frame}{Simple example}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+{\small
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & Habitat & Avg. temp. & Presence \\
+    \midrule
+    Yes & Shrubs    & 10 & 0 \\
+    Yes & Forests   & 12 & 0 \\
+    No  & Shrubs    & 18 & 1 \\
+    No  & Shrubs    & 25 & 1 \\
+    Yes & Shrubs    & 28 & 1 \\
+    Yes & Forests   & 30 & 0 \\
+    No  & Forests   & 33 & 0 \\
+    \bottomrule
+\end{tabular}
+        }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \includegraphics<2>[width=.8\textwidth]{./figs/schemas/gini.png}%
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}{Gini impurity}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+$$
+\sum_{i=1}^J \left( p_i \sum_{k\neq i} p_k \right)
+ = 1 - \sum^J_{i=1} p_i^2
+ $$
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \includegraphics[width=.8\textwidth]{./figs/schemas/gini.png}%
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Gini impurity}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+$$
+        1 - (\frac{1}{1+3})^2 - (\frac{3}{1+3})^2 = 0.375
+ $$
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \includegraphics[width=.8\textwidth]{./figs/schemas/gini.png}%
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Gini impurity}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+$$
+        Leaf~Gini = (\frac{4}{4+3})0.375
+ $$
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \includegraphics[width=.8\textwidth]{./figs/schemas/gini.png}%
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Gini impurity}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+$$
+        1 - (\frac{0}{0+1})^2 - (\frac{1}{0+1})^2 = 0
+ $$
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \includegraphics[width=.8\textwidth]{./figs/schemas/gini.png}%
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Building the tree}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+{\small
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & Habitat & Avg. temp. & Presence \\
+    \midrule
+    Yes & Shrubs    & 10 & 0 \\
+    Yes & Forests   & 12 & 0 \\
+    No  & Shrubs    & 18 & 1 \\
+    No  & Shrubs    & 25 & 1 \\
+    Yes & Shrubs    & 28 & 1 \\
+    Yes & Forests   & 30 & 0 \\
+    No  & Forests   & 33 & 0 \\
+    \bottomrule
+\end{tabular}
+        }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \includegraphics[width=.8\textwidth]{./figs/schemas/tree.png}%
+\end{column}
+\end{columns}
+\end{frame}
 
 \begin{frame}{}
 \end{frame}
@@ -66,8 +193,45 @@
 \end{frame}
 
 
-\begin{frame}{Usefull ressources}
 
+\begin{frame}{RF advantages and drawbacks}
+\begin{columns}
+\begin{column}{0.05\textwidth}
+\begin{itemize}
+    \item[] 
+    \item[] 
+    \item[] 
+    \item[] 
+\end{itemize}
+\end{column}
+    \column{0.45\linewidth}
+        \textbf{Advantages}
+        \begin{itemize}
+            \item<1-> different inputs
+            \item<2-> different outputs
+            \item<3-> $\approx$ explainable
+            \item<4-> pretty fast
+            \item<5-> seasonned
+        \end{itemize}
+    \column{0.45\linewidth}
+        \textbf{Drawbacks}
+        \begin{itemize}
+            \item<6-> need to test hyper-parameters
+            \item<7-> \textbf{need for rich descriptors}
+            \item[] 
+            \item[] 
+        \end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Decendants}
+    \begin{itemize}
+        \item Gradient Boosting
+        \item XGBoost
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Usefull ressources}
 \begin{itemize}
     \item \texttt{scikit-learn} docs !
     \item \href{https://www.youtube.com/@statquest}{StatQuest}
