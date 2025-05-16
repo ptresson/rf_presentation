@@ -223,6 +223,7 @@ Non-linear data, multiple outputs !
 \begin{columns}
     \begin{column}{0.5\textwidth}
 \centering
+        \only<1>{
 {\footnotesize
 \begin{tabular}{llc|r}
     \toprule
@@ -238,9 +239,7 @@ Non-linear data, multiple outputs !
     \bottomrule
 \end{tabular}
         }
-    \end{column}
-    \begin{column}{0.5\textwidth}
-\centering
+    }%
         \only<2>{
 {\footnotesize
 \begin{tabular}{llc|r}
@@ -258,7 +257,9 @@ Non-linear data, multiple outputs !
 \end{tabular}
         }
     }
-\end{column}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
 \end{columns}
 \end{frame}
 
@@ -266,6 +267,7 @@ Non-linear data, multiple outputs !
 \begin{columns}
     \begin{column}{0.5\textwidth}
 \centering
+        \only<1>{
 {\footnotesize
 \begin{tabular}{llc|r}
     \toprule
@@ -273,17 +275,15 @@ Non-linear data, multiple outputs !
     \midrule
     Yes & Shrubs    & 10 & 0 \\
     Yes & Forests   & 12 & 0 \\
+    Yes & Forests   & 12 & 0 \\
     No  & Shrubs    & 18 & 1 \\
     No  & Shrubs    & 25 & 1 \\
     Yes & Shrubs    & 28 & 1 \\
-    Yes & Forests   & 30 & 0 \\
-    No  & Forests   & 33 & 0 \\
+    Yes & Shrubs    & 28 & 1 \\
     \bottomrule
 \end{tabular}
         }
-    \end{column}
-    \begin{column}{0.5\textwidth}
-\centering
+    }%
         \only<2>{
 {\footnotesize
 \begin{tabular}{llc|r}
@@ -302,14 +302,18 @@ Non-linear data, multiple outputs !
         }
     }
     \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+    \end{column}
 \end{columns}
 \end{frame}
 
 
-\begin{frame}{Subset variables}
+\begin{frame}{Building a tree}
 \begin{columns}
     \begin{column}{0.5\textwidth}
 \centering
+        \only<1-2>{
 {\footnotesize
 \begin{tabular}{llc|r}
     \toprule
@@ -325,10 +329,42 @@ Non-linear data, multiple outputs !
     \bottomrule
 \end{tabular}
         }
+    }%
+        \only<3->{
+{\footnotesize
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & \textbf{Habitat} & \textbf{Avg. temp.} & Presence \\
+    \midrule
+    \textbf{Yes} & Shrubs    & \textbf{10} & 0 \\
+    \textbf{Yes} & Forests   & \textbf{12} & 0 \\
+    \textbf{Yes} & Forests   & \textbf{12} & 0 \\
+    \textbf{No } & Shrubs    & \textbf{18} & 1 \\
+    \textbf{No } & Shrubs    & \textbf{25} & 1 \\
+    \textbf{Yes} & Shrubs    & \textbf{28} & 1 \\
+    \textbf{Yes} & Shrubs    & \textbf{28} & 1 \\
+    \bottomrule
+\end{tabular}
+        }
+    }
     \end{column}
     \begin{column}{0.5\textwidth}
+        \centering
+        \includegraphics<2-3>[width=.6\textwidth]{./figs/schemas/forest0.png}%
+        \includegraphics<4>[width=.6\textwidth]{./figs/schemas/forest1.png}%
+        \includegraphics<5>[width=.6\textwidth]{./figs/schemas/forest2.png}
     \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}{Building a Forest}
+\centering
+    \includegraphics[width=.7\textwidth]{./figs/schemas/entire-forest.png}%
+\end{frame}
+
+\begin{frame}{Using the Forest}
+\centering
+    \includegraphics[width=.7\textwidth]{./figs/schemas/entire-forest-usage.png}%
 \end{frame}
 
 \begin{frame}{RF advantages}
