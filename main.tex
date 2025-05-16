@@ -72,7 +72,7 @@
 \begin{columns}
     \begin{column}{0.5\textwidth}
 \centering
-{\small
+{\footnotesize
 \begin{tabular}{llc|r}
     \toprule
     Disturbance & Habitat & Avg. temp. & Presence \\
@@ -93,6 +93,7 @@
     \includegraphics<2>[width=.8\textwidth]{./figs/schemas/gini.png}%
 \end{column}
 \end{columns}
+    \nonumbernote{adapted from \href{https://www.youtube.com/watch?v=_L39rN6gz7Y}{StatQuest}}
 \end{frame}
 
 
@@ -161,7 +162,7 @@ $$
 \begin{columns}
     \begin{column}{0.5\textwidth}
 \centering
-{\small
+{\footnotesize
 \begin{tabular}{llc|r}
     \toprule
     Disturbance & Habitat & Avg. temp. & Presence \\
@@ -184,7 +185,18 @@ $$
 \end{columns}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Regression trees}
+\begin{columns}
+    \begin{column}[t]{0.5\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{./figs/regression.png}%
+\end{column}
+    \begin{column}[t]{0.5\textwidth}
+\centering
+    \includegraphics[width=\textwidth]{./figs/regression_tree.png}%
+\end{column}
+\end{columns}
+    \nonumbernote{adapted from \href{https://scikit-learn.org/stable/auto_examples/tree/plot_tree_regression.html}{sklearn documentation}}
 \end{frame}
 
 \section{Random Forests}
