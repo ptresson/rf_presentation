@@ -214,39 +214,140 @@ Non-linear data, multiple outputs !
 
 \section{Random Forests}
 
-\begin{frame}{}
+\begin{frame}{Main idea}
+    \centering
+    Why not several trees ?
+\end{frame}
+
+\begin{frame}{Boostraping}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+{\footnotesize
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & Habitat & Avg. temp. & Presence \\
+    \midrule
+    Yes & Shrubs    & 10 & 0 \\
+    Yes & Forests   & 12 & 0 \\
+    No  & Shrubs    & 18 & 1 \\
+    No  & Shrubs    & 25 & 1 \\
+    Yes & Shrubs    & 28 & 1 \\
+    Yes & Forests   & 30 & 0 \\
+    No  & Forests   & 33 & 0 \\
+    \bottomrule
+\end{tabular}
+        }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+        \only<2>{
+{\footnotesize
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & Habitat & Avg. temp. & Presence \\
+    \midrule
+    Yes & Shrubs    & 10 & 0 \\
+    Yes & Forests   & 12 & 0 \\
+    \textcolor{red}{Yes} & \textcolor{red}{Forests}   & \textcolor{red}{12} & \textcolor{red}{0} \\
+    No  & Shrubs    & 18 & 1 \\
+    No  & Shrubs    & 25 & 1 \\
+    Yes & Shrubs    & 28 & 1 \\
+    \textcolor{red}{Yes} & \textcolor{red}{Shrubs}    & \textcolor{red}{28} & \textcolor{red}{1} \\
+    \bottomrule
+\end{tabular}
+        }
+    }
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Subset variables}
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+\centering
+{\footnotesize
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & Habitat & Avg. temp. & Presence \\
+    \midrule
+    Yes & Shrubs    & 10 & 0 \\
+    Yes & Forests   & 12 & 0 \\
+    No  & Shrubs    & 18 & 1 \\
+    No  & Shrubs    & 25 & 1 \\
+    Yes & Shrubs    & 28 & 1 \\
+    Yes & Forests   & 30 & 0 \\
+    No  & Forests   & 33 & 0 \\
+    \bottomrule
+\end{tabular}
+        }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+\centering
+        \only<2>{
+{\footnotesize
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & \textbf{Habitat} & \textbf{Avg. temp.} & Presence \\
+    \midrule
+    Yes & \textbf{Shrubs }   & \textbf{10} & 0 \\
+    Yes & \textbf{Forests}   & \textbf{12} & 0 \\
+    Yes & \textbf{Forests}   & \textbf{12} & 0 \\
+    No  & \textbf{Shrubs }   & \textbf{18} & 1 \\
+    No  & \textbf{Shrubs }   & \textbf{25} & 1 \\
+    Yes & \textbf{Shrubs }   & \textbf{28} & 1 \\
+    Yes & \textbf{Shrubs }   & \textbf{28} & 1 \\
+    \bottomrule
+\end{tabular}
+        }
+    }
+    \end{column}
+\end{columns}
 \end{frame}
 
 
-
-\begin{frame}{RF advantages and drawbacks}
+\begin{frame}{Subset variables}
 \begin{columns}
-\begin{column}{0.05\textwidth}
-\begin{itemize}
-    \item[] 
-    \item[] 
-    \item[] 
-    \item[] 
-\end{itemize}
-\end{column}
-    \column{0.45\linewidth}
-        \textbf{Advantages}
+    \begin{column}{0.5\textwidth}
+\centering
+{\footnotesize
+\begin{tabular}{llc|r}
+    \toprule
+    Disturbance & \textbf{Habitat} & \textbf{Avg. temp.} & Presence \\
+    \midrule
+    Yes & \textbf{Shrubs }   & \textbf{10} & 0 \\
+    Yes & \textbf{Forests}   & \textbf{12} & 0 \\
+    Yes & \textbf{Forests}   & \textbf{12} & 0 \\
+    No  & \textbf{Shrubs }   & \textbf{18} & 1 \\
+    No  & \textbf{Shrubs }   & \textbf{25} & 1 \\
+    Yes & \textbf{Shrubs }   & \textbf{28} & 1 \\
+    Yes & \textbf{Shrubs }   & \textbf{28} & 1 \\
+    \bottomrule
+\end{tabular}
+        }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{RF advantages}
         \begin{itemize}
             \item<1-> different inputs
             \item<2-> different outputs
             \item<3-> $\approx$ explainable
-            \item<4-> pretty fast
-            \item<5-> seasonned
+            \item<4-> pretty easy to fit
+            \item<5->[$\rightarrow$] \textbf{seasoned and reliable}
         \end{itemize}
-    \column{0.45\linewidth}
-        \textbf{Drawbacks}
+\end{frame}
+
+\begin{frame}{RF drawbacks}
         \begin{itemize}
-            \item<6-> need to test hyper-parameters
-            \item<7-> \textbf{need for rich descriptors}
+            \item<1-> need to test hyper-parameters
+            \item<2-> \textbf{need for rich descriptors}
             \item[] 
             \item[] 
         \end{itemize}
-\end{columns}
 \end{frame}
 
 \begin{frame}{Decendants}
