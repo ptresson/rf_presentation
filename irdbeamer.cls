@@ -8,12 +8,12 @@
 \metroset{sectionpage = progressbar}
 \metroset{subsectionpage = progressbar}
 % \metroset{progressbar = frametitle}
-\metroset{progressbar = head}
+% \metroset{progressbar = head}
 \metroset{numbering = fraction}
 \metroset{block = fill}
 
 % Progress bar thickness
-\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@titleseparator@linewidth}{0pt}
 \setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
 \setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
 

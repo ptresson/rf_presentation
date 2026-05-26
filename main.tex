@@ -8,17 +8,17 @@
 \title{Decision trees and Random Forests}
 \subtitle{AI for ecologists}
 \author[Paul Tresson]{Paul Tresson}
-\date{20/05/25} % or whatever the date you are presenting in is
+\date{} % or whatever the date you are presenting in is
 % \institute[Institut de Recherche pour le Développement]{UMR AMAP}
 
 %\copyrightnotice{Published by Institut de Recherche pour le Développement, with permission}
 
 % %% to add a background image for the title slide, uncomment here
-% \usebackgroundtemplate{
-%   \tikz[overlay, remember picture] \node[at=(current page.center)] {
-%     \includegraphics[width=\paperwidth,height=\paperheight]{example-image-a}
-%   };
-% }
+\usebackgroundtemplate{
+  \tikz[overlay, remember picture] \node[at=(current page.center)] {
+    \includegraphics[width=\paperwidth,height=\paperheight]{./title.png}
+  };
+}
 
 \usepackage[
     backend=biber,
@@ -335,7 +335,7 @@ Non-linear data, multiple outputs !
 {\footnotesize
 \begin{tabular}{llc|r}
     \toprule
-    Disturbance & \textbf{Habitat} & \textbf{Avg. temp.} & Presence \\
+    \textbf{Disturbance} & Habitat & \textbf{Avg. temp.} & Presence \\
     \midrule
     \textbf{Yes} & Shrubs    & \textbf{10} & 0 \\
     \textbf{Yes} & Forests   & \textbf{12} & 0 \\
